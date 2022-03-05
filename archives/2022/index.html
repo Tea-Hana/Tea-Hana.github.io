@@ -3,6 +3,7 @@
 
 
 <head>
+    <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
     <meta charset="utf-8">
     <meta name="keywords" content="归档: 2022, TamaNiahの休憩小屋">
     <meta name="description" content="TamaNiahの休憩小屋">
@@ -51,6 +52,8 @@
                 </a>
             </div>
             
+
+menuMap.set("ArtiTalk", "说说");
 
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
 <ul class="right nav-menu">
@@ -504,13 +507,25 @@
                                 </span>
                                 <span class="publish-author">
                                     
-                                    <i class="fas fa-user fa-fw"></i>
-                                    TamaNiah
+                                    <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                    
+                                    <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                    </a>
+                                    
                                     
                                 </span>
                             </div>
                         </div>
 
+                        
+                        <div class="card-action article-tags">
+                            
+                            <a href="/tags/Flink/"><span class="chip bg-color">Flink</span></a>
+                            
+                            <a href="/tags/Java/"><span class="chip bg-color">Java</span></a>
+                            
+                        </div>
                         
                     </div>
                 </div>
@@ -637,6 +652,9 @@
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
             
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">69.5k</span>
+            
             
             
                 
@@ -754,7 +772,6 @@
 </footer>
 
 <div class="progress-bar"></div>
-
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -877,6 +894,15 @@ $(function () {
 
     
 
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 雪花特效 -->

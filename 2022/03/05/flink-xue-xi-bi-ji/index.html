@@ -3,6 +3,7 @@
 
 
 <head>
+    <link rel="stylesheet" type="text/css" href="/libs/artitalk/artitalk.min.css">
     <meta charset="utf-8">
     <meta name="keywords" content="Flink学习笔记, TamaNiahの休憩小屋">
     <meta name="description" content="
@@ -61,6 +62,8 @@
                 </a>
             </div>
             
+
+menuMap.set("ArtiTalk", "说说");
 
 <a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
 <ul class="right nav-menu">
@@ -337,116 +340,39 @@
 
 
 
-<main class="post-container content">
+<main class="container content">
 
     
-    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
-<style>
-    #articleContent h1::before,
-    #articleContent h2::before,
-    #articleContent h3::before,
-    #articleContent h4::before,
-    #articleContent h5::before,
-    #articleContent h6::before {
-        display: block;
-        content: " ";
-        height: 100px;
-        margin-top: -100px;
-        visibility: hidden;
-    }
-
-    #articleContent :focus {
-        outline: none;
-    }
-
-    .toc-fixed {
-        position: fixed;
-        top: 64px;
-    }
-
-    .toc-widget {
-        width: 345px;
-        padding-left: 20px;
-    }
-
-    .toc-widget .toc-title {
-        padding: 35px 0 15px 17px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        line-height: 1.5rem;
-    }
-
-    .toc-widget ol {
-        padding: 0;
-        list-style: none;
-    }
-
-    #toc-content {
-        padding-bottom: 30px;
-        overflow: auto;
-    }
-
-    #toc-content ol {
-        padding-left: 10px;
-    }
-
-    #toc-content ol li {
-        padding-left: 10px;
-    }
-
-    #toc-content .toc-link:hover {
-        color: #42b983;
-        font-weight: 700;
-        text-decoration: underline;
-    }
-
-    #toc-content .toc-link::before {
-        background-color: transparent;
-        max-height: 25px;
-
-        position: absolute;
-        right: 23.5vw;
-        display: block;
-    }
-
-    #toc-content .is-active-link {
-        color: #42b983;
-    }
-
-    #floating-toc-btn {
-        position: fixed;
-        right: 15px;
-        bottom: 76px;
-        padding-top: 15px;
-        margin-bottom: 0;
-        z-index: 998;
-    }
-
-    #floating-toc-btn .btn-floating {
-        width: 48px;
-        height: 48px;
-    }
-
-    #floating-toc-btn .btn-floating i {
-        line-height: 48px;
-        font-size: 1.4rem;
-    }
-</style>
-<div class="row">
-    <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+    <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flink/">
+                                <span class="chip bg-color">Flink</span>
+                            </a>
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                大数据
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -460,12 +386,32 @@
                 
 
                 
-
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2022-03-05
+                </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    69.4k
+                </div>
+                
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    336 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
             </div>
         </div>
         <hr class="clearfix">
@@ -10533,27 +10479,27 @@ PatternStream&lt;Event&gt; patternStream = CEP.pattern(input, pattern);<span ari
 <li><p><code>select()</code>方法需要输入一个select function作为参数,每个成功匹配的事件序列都会调用它</p>
 </li>
 <li><p><code>select()</code> 以一个Map&lt;String，List&lt;IN]&gt;&gt; 来接收匹配到的事件序列，其中Key就是每个模式的名称，而value就是所有接收到的事件的List类型</p>
-<pre class="line-numbers language-none"><code class="language-none">public OUT select(Map&lt;String, List&lt;IN&gt;&gt; pattern) throws Exception {
-  IN startEvent = pattern.get("start").get(0);
-  IN endEvent = pattern.get("end").get(0);
-  return new OUT(startEvent, endEvent);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token class-name">OUT</span> <span class="token function">select</span><span class="token punctuation">(</span><span class="token class-name">Map</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">,</span> <span class="token class-name">List</span><span class="token punctuation">&lt;</span>IN<span class="token punctuation">&gt;</span><span class="token punctuation">&gt;</span></span> pattern<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Exception</span> <span class="token punctuation">{</span>
+  <span class="token class-name">IN</span> startEvent <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"start"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">IN</span> endEvent <span class="token operator">=</span> pattern<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token function">OUT</span><span class="token punctuation">(</span>startEvent<span class="token punctuation">,</span> endEvent<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 <h2 id="15-4-超时事件的提取"><a href="#15-4-超时事件的提取" class="headerlink" title="15.4 超时事件的提取"></a><a href="#/study/BigData/Flink/%E5%B0%9A%E7%A1%85%E8%B0%B7Flink%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0?id=_154-%E8%B6%85%E6%97%B6%E4%BA%8B%E4%BB%B6%E7%9A%84%E6%8F%90%E5%8F%96">15.4 超时事件的提取</a></h2><ul>
 <li><p><strong>当一个模式通过within关键字定义了检测窗口时间时，部分事件序列可能因为超过窗口长度而被丢弃；为了能够处理这些超时的部分匹配，select和flatSelect API调用允许指定超时处理程序</strong></p>
 </li>
 <li><p><strong>超时处理程序会接收到目前为止由模式匹配到的所有事件，由一个OutputTag定义接收到的超时事件序列</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">PatternStream&lt;Event&gt; patternStream = CEP.pattern(input, pattern);
-OutputTag&lt;String&gt; outputTag = new OutputTag&lt;String&gt;("side-output"){};
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">PatternStream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Event</span><span class="token punctuation">&gt;</span></span> patternStream <span class="token operator">=</span> CEP<span class="token punctuation">.</span><span class="token function">pattern</span><span class="token punctuation">(</span>input<span class="token punctuation">,</span> pattern<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">OutputTag</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> outputTag <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">OutputTag</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token string">"side-output"</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 
-SingleOutputStreamOperator&lt;ComplexEvent&gt; flatResult = 
-  patternStream.flatSelect(
-  outputTag,
-  new PatternFlatTimeoutFunction&lt;Event, TimeoutEvent&gt;() {...},
-  new PatternFlatSelectFunction&lt;Event, ComplexEvent&gt;() {...}
-);
-DataStream&lt;TimeoutEvent&gt; timeoutFlatResult = 
-  flatResult.getSideOutput(outputTag);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token class-name">SingleOutputStreamOperator</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">ComplexEvent</span><span class="token punctuation">&gt;</span></span> flatResult <span class="token operator">=</span> 
+  patternStream<span class="token punctuation">.</span><span class="token function">flatSelect</span><span class="token punctuation">(</span>
+  outputTag<span class="token punctuation">,</span>
+  <span class="token keyword">new</span> <span class="token class-name">PatternFlatTimeoutFunction</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Event</span><span class="token punctuation">,</span> <span class="token class-name">TimeoutEvent</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token keyword">new</span> <span class="token class-name">PatternFlatSelectFunction</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Event</span><span class="token punctuation">,</span> <span class="token class-name">ComplexEvent</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">DataStream</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">TimeoutEvent</span><span class="token punctuation">&gt;</span></span> timeoutFlatResult <span class="token operator">=</span> 
+  flatResult<span class="token punctuation">.</span><span class="token function">getSideOutput</span><span class="token punctuation">(</span>outputTag<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 </ul>
 
                 
@@ -10571,7 +10517,7 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">TamaNiah</a>
+                    <a href="/about" rel="external nofollow noreferrer">hana</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -10594,7 +10540,7 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">TamaNiah</a>
+                    <a href="/about" target="_blank">hana</a>
                     !
                 </span>
             </div>
@@ -10618,7 +10564,15 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Flink/">
+                                    <span class="chip bg-color">Flink</span>
+                                </a>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -10816,13 +10770,29 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            TamaNiah
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" class="post-category">
+                                    大数据
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flink/">
+                        <span class="chip bg-color">Flink</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -10889,100 +10859,6 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-    </div>
-    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
-        <div class="toc-widget card" style="background-color: white;">
-            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
-            <div id="toc-content"></div>
-        </div>
-    </div>
-</div>
-
-<!-- TOC 悬浮按钮. -->
-
-<div id="floating-toc-btn" class="hide-on-med-and-down">
-    <a class="btn-floating btn-large bg-color">
-        <i class="fas fa-list-ul"></i>
-    </a>
-</div>
-
-
-<script src="/libs/tocbot/tocbot.min.js"></script>
-<script>
-    $(function () {
-        tocbot.init({
-            tocSelector: '#toc-content',
-            contentSelector: '#articleContent',
-            headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
-        });
-
-        // modify the toc link href to support Chinese.
-        let i = 0;
-        let tocHeading = 'toc-heading-';
-        $('#toc-content a').each(function () {
-            $(this).attr('href', '#' + tocHeading + (++i));
-        });
-
-        // modify the heading title id to support Chinese.
-        i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
-            $(this).attr('id', tocHeading + (++i));
-        });
-
-        // Set scroll toc fixed.
-        let tocHeight = parseInt($(window).height() * 0.4 - 64);
-        let $tocWidget = $('.toc-widget');
-        $(window).scroll(function () {
-            let scroll = $(window).scrollTop();
-            /* add post toc fixed. */
-            if (scroll > tocHeight) {
-                $tocWidget.addClass('toc-fixed');
-            } else {
-                $tocWidget.removeClass('toc-fixed');
-            }
-        });
-
-        
-        /* 修复文章卡片 div 的宽度. */
-        let fixPostCardWidth = function (srcId, targetId) {
-            let srcDiv = $('#' + srcId);
-            if (srcDiv.length === 0) {
-                return;
-            }
-
-            let w = srcDiv.width();
-            if (w >= 450) {
-                w = w + 21;
-            } else if (w >= 350 && w < 450) {
-                w = w + 18;
-            } else if (w >= 300 && w < 350) {
-                w = w + 16;
-            } else {
-                w = w + 14;
-            }
-            $('#' + targetId).width(w);
-        };
-
-        // 切换TOC目录展开收缩的相关操作.
-        const expandedClass = 'expanded';
-        let $tocAside = $('#toc-aside');
-        let $mainContent = $('#main-content');
-        $('#floating-toc-btn .btn-floating').click(function () {
-            if ($tocAside.hasClass(expandedClass)) {
-                $tocAside.removeClass(expandedClass).hide();
-                $mainContent.removeClass('l9');
-            } else {
-                $tocAside.addClass(expandedClass).show();
-                $mainContent.addClass('l9');
-            }
-            fixPostCardWidth('artDetail', 'prenext-posts');
-        });
-        
-    });
-</script>
-
     
 
 </main>
@@ -11004,6 +10880,9 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">69.5k</span>
             
             
             
@@ -11122,7 +11001,6 @@ DataStream&lt;TimeoutEvent&gt; timeoutFlatResult =
 </footer>
 
 <div class="progress-bar"></div>
-
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -11245,6 +11123,15 @@ $(function () {
 
     
 
+    
+        
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+            }
+        </script>
     
 
     <!-- 雪花特效 -->
